@@ -1,0 +1,9 @@
+FROM postgres:12
+LABEL maintainer="KK Yong <kehkok@gmail.com>"
+
+ENV POSTGRES_DB=northwind
+ENV POSTGRES_USER=postgres
+ENV POSTGRES_PASSWORD=postgres
+
+COPY ./northwind.sql ./
+COPY ./init_northwind.sh /docker-entrypoint-initdb.d/
